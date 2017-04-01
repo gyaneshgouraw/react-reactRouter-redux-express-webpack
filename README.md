@@ -34,5 +34,5 @@ $ npm run dev
 
 ## License
 
-MIT © 
+MIT © Gyanesh Gouraw
 
