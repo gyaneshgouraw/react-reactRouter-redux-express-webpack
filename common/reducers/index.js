@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import counter from './counter'
+import repos from '../../client/modules/Repos/Reducer'
+import home from '../../client/modules/Home/Reducer'
 
 const rootReducer = combineReducers({
-  counter
+  repos,
+  home
 })
 
 export default rootReducer
