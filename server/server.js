@@ -32,13 +32,17 @@ app.use(webpackHotMiddleware(compiler))
 app.use(handleRender)
 
 function handleRender(req, res) {
-
-  console.log('req', req.url)
-   const counter = 10
+  
+// preloading state with reducer default values
+       let preloadedState = {
+            home : {}
+          }
 
   match({ routes, location: req.url }, (err, redirect, renderProps) => {
       if(renderProps){
-          const preloadedState = { counter }
+        if(req.url === '/repos'){
+          preloadedState = {...preloadedState,repos : {repoList:['Server Rendered 1','2','3','4']}}
+        }
           const store = configureStore(preloadedState)
           const html = renderToString(
             <Provider store={store}>
