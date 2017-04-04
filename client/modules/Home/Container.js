@@ -2,8 +2,16 @@
 import React,{ Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter ,Link} from 'react-router'
+import styled from 'styled-components';
 
 import {setAuthorName,getAuthorName,resetAuthorName} from './Actions'
+import {LayoutBorder} from '../styleComponents'
+
+
+export const CompLayoutBorder = styled(LayoutBorder)`
+	border:1px solid #f1efef;
+	padding:25px
+	`;
 
 
 
@@ -27,7 +35,7 @@ class Home extends Component {
 	render(){
 		const margin = {'marginTop':'20px'}
 		return(
-			<div style={{'border':'1px solid #f1efe0'}}>
+			<CompLayoutBorder>
 				<div><p>HOME</p>
 				<li><Link to="/repos" activeStyle={{ color: 'red' }}>Navigate to Repos</Link></li>
                 <li style = {margin}><button onClick={this.setAuthor}>
@@ -40,7 +48,7 @@ class Home extends Component {
 					</button> 
 				</li>}
     			</div>
-			</div>
+			</CompLayoutBorder>
 			)
 
 	}

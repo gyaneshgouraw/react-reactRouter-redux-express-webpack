@@ -1,8 +1,7 @@
 import React,{ Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter ,Link} from 'react-router'
-
-
+import {LayoutBorder,Title,LayoutPadding} from './styleComponents'
 
 
 class SuperContainer extends Component {
@@ -13,10 +12,12 @@ class SuperContainer extends Component {
 
 	render(){
 		return(
-			<div style={{'border':'1px solid #f1efef'}}>
-				<div>Super Container Layout</div>
-				<div style = {{'padding':'25px'}}>{this.props.children}</div>
-			</div>
+			<LayoutBorder>
+				<Title>Super Container Layout</Title>
+				<LayoutPadding>
+					{ this.props.children }
+				</LayoutPadding>
+			</LayoutBorder>
 			)
 	}
 

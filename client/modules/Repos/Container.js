@@ -2,10 +2,14 @@
 import React,{ Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter ,Link} from 'react-router'
+import styled from 'styled-components';
 
 import {getRepoNames,setRepoNames,resetRepos} from './Actions'
 
-
+export const CompLayoutBorder = styled.div`
+	border:1px solid #f1efef;
+	padding:25px
+	`;
 
 
 class Repos extends Component {
@@ -31,7 +35,7 @@ class Repos extends Component {
 			margin = {'marginTop':'20px'}
 
 		return(
-			<div style={{'border':'1px solid #f1efe0'}}>
+			<CompLayoutBorder>
 				<div><p>Repos</p>
 				<li><Link to="/" activeStyle={{ color: 'red' }}>Navigate to home</Link></li>
                 <li style = {margin}>
@@ -48,7 +52,7 @@ class Repos extends Component {
 					</button>
 				</li>}
     			</div>
-			</div>
+			</CompLayoutBorder>
 			)
 
 	}
