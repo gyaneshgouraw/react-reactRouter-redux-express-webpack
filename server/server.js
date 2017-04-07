@@ -1,8 +1,12 @@
 /* eslint-disable no-console, no-use-before-define */
 
 import path from 'path'
-import Express from 'express'
+//import Express from 'express'
 import qs from 'qs'
+
+import koa from 'koa'
+import mount from 'koa-mount'
+import koaStatic from 'koa-static'
 
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
@@ -20,27 +24,28 @@ import routes from '../client/routes'
 import configureStore from '../common/store/configureStore'
 
 
-const app = new Express()
+const app = new koa()
 const port = 3002
 
 // Use this middleware to set up hot module reloading via webpack.
-const compiler = webpack(webpackConfig)
-app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }))
-app.use(webpackHotMiddleware(compiler))
+// const compiler = webpack(webpackConfig)
+// app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }))
+// app.use(webpackHotMiddleware(compiler))
+app.use(mount('/static', koaStatic('dist')))
 
 // This is fired every time the server side receives a request
 app.use(handleRender)
 
-function handleRender(req, res) {
+function *handleRender(next) {
   
 // preloading state with reducer default values
        let preloadedState = {
             home : {}
           }
 
-  match({ routes, location: req.url }, (err, redirect, renderProps) => {
+  match({ routes, location:this.request.url }, (err, redirect, renderProps) => {
       if(renderProps){
-        if(req.url === '/repos'){
+        if(this.request.url === '/repos'){
           preloadedState = {...preloadedState,repos : {repoList:['Server Rendered 1','2','3','4']}}
         }
           const store = configureStore(preloadedState)
@@ -50,12 +55,13 @@ function handleRender(req, res) {
             </Provider>
           )
           const finalState = store.getState()
-          res.send(renderFullPage(html, finalState))
+          this.body = renderFullPage(html, finalState)
         }
         else{
-          res.send('This is not the listed route',202)
+          this.body = 'This is not the listed route'
         }
   })
+  yield next
 }
 
 function renderFullPage(html, preloadedState) {
