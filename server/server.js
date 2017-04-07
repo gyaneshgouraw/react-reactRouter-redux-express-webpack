@@ -28,7 +28,15 @@ const app = new koa()
 const port = 3002
 
 // Use this middleware to set up hot module reloading via webpack.
-// const compiler = webpack(webpackConfig)
+
+ const compiler = webpack(webpackConfig)
+ compiler.run(function(err, stats) {
+   if (err)
+   console.log('webpack error',err)
+   else
+   console.log('Webpack bundle configured in -',stats.endTime)
+})
+
 // app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }))
 // app.use(webpackHotMiddleware(compiler))
 app.use(mount('/static', koaStatic('dist')))
