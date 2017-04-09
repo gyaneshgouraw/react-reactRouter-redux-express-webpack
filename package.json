@@ -5,7 +5,11 @@
   "scripts": {
     "start": "node server/index.js",
     "start2": "node-debug -p 5859 server/index.js",
-    "test": "jest"
+    "build":"npm run build:client && npm run build:server",
+    "build:server":"webpack --config webpack.server.config.js",
+    "build:client":"webpack --config webpack.config.js",
+    "startall": "npm run clean && npm run build && node dist/server.bundle.js",
+    "clean":"rm -rf ./dist"
   },
   "repository": {
     "type": "git",
