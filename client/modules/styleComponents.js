@@ -14,3 +14,13 @@ export const LayoutBorder = styled.div`
 export const LayoutPadding = styled.div`
         padding:25px
     `;
+
+export const Offline = styled.div`
+        border:1px solid green;
+        padding: 20px;
+        color: red;
+`
+export const Image = styled.img`
+        width:158px;
+
+`

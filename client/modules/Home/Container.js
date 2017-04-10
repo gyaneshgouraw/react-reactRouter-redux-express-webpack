@@ -5,12 +5,12 @@ import { withRouter ,Link} from 'react-router'
 import styled from 'styled-components';
 
 import {setAuthorName,getAuthorName,resetAuthorName} from './Actions'
-import {LayoutBorder} from '../styleComponents'
+import {LayoutBorder,Offline,Image} from '../styleComponents'
 
 
 export const CompLayoutBorder = styled(LayoutBorder)`
 	border:1px solid #f1efef;
-	padding:25px
+	padding:25px;
 	`;
 
 
@@ -36,16 +36,16 @@ class Home extends Component {
 		const margin = {'marginTop':'20px'}
 		return(
 			<CompLayoutBorder>
-				<div><p>HOME</p>
+				<div><p>HOME12</p>
 				<li><Link to="/repos" activeStyle={{ color: 'red' }}>Navigate to Repos</Link></li>
                 <li style = {margin}><button onClick={this.setAuthor}>
-						Set Author NAme
+						Set Author Name
 				</button> <span>{this.props.homeState && this.props.homeState.author}</span></li>
 
 				{this.props.homeState.author && <li style={margin}>
 					<button onClick={this.resetAuthor}>
 						Reset Author Name
-					</button> 
+					</button>
 				</li>}
     			</div>
 			</CompLayoutBorder>

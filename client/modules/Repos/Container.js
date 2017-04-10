@@ -5,6 +5,7 @@ import { withRouter ,Link} from 'react-router'
 import styled from 'styled-components';
 
 import {getRepoNames,setRepoNames,resetRepos} from './Actions'
+import {Offline,Image} from '../styleComponents'
 
 export const CompLayoutBorder = styled.div`
 	border:1px solid #f1efef;
@@ -51,6 +52,9 @@ class Repos extends Component {
 							Reset Repos
 					</button>
 				</li>}
+				<offline>
+					<Image src = "https://brightonsc.vic.edu.au/images/Offline.png"/>
+				</offline>
     			</div>
 			</CompLayoutBorder>
 			)

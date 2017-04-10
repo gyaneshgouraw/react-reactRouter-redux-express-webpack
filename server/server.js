@@ -9,8 +9,7 @@ import mount from 'koa-mount'
 import koaStatic from 'koa-static'
 
 import webpack from 'webpack'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
+
 import webpackConfig from '../webpack.config'
 
 import React from 'react'
