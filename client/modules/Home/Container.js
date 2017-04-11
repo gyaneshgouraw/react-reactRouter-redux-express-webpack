@@ -36,7 +36,7 @@ class Home extends Component {
 		const margin = {'marginTop':'20px'}
 		return(
 			<CompLayoutBorder>
-				<div><p>HOME12</p>
+				<div><p>HOME</p>
 				<li><Link to="/repos" activeStyle={{ color: 'red' }}>Navigate to Repos</Link></li>
                 <li style = {margin}><button onClick={this.setAuthor}>
 						Set Author Name

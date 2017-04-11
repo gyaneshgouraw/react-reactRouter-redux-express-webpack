@@ -4,8 +4,8 @@ var OfflinePlugin = require('offline-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
-  entry:['webpack/hot/dev-server/',
-          'webpack-dev-server/client?http://localhost:8081/',
+  entry:['webpack/hot/only-dev-server/',
+          'webpack-dev-server/client?http://localhost:8080/',
           './client/index.js'
         ],
   // entry: [
@@ -35,9 +35,13 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions:['.js','.jsx']
+  },
   devServer :{
     hot :true,
-    contentBase:'/'
+    contentBase:__dirname,
+    port:8080
   }
 }
 

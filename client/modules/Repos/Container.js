@@ -37,7 +37,7 @@ class Repos extends Component {
 
 		return(
 			<CompLayoutBorder>
-				<div><p>Repos</p>
+				<div><p>Repo</p>
 				<li><Link to="/" activeStyle={{ color: 'red' }}>Navigate to home</Link></li>
                 <li style = {margin}>
 					<button onClick={this.setRepos}>
