@@ -46,3 +46,6 @@ module.exports = {
 }
 
 //https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader-the-missing-manual-232336dc0d96
+
+//https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89
+
