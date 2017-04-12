@@ -22,7 +22,7 @@ class Repos extends Component {
 	}
 
 	setRepos(){
-		const repoName = ['Hello','World','Repo','Made']
+		const repoName = ['Client side rendered -1','CSR -2','CSR -3','CSR -4']
 		this.props.dispatch(setRepoNames(repoName))
 	}
 
@@ -38,6 +38,7 @@ class Repos extends Component {
 		return(
 			<CompLayoutBorder>
 				<div><p>Repo</p>
+				<li style = {margin}> If you directly reload this page - you will see server rendered Page</li>
 				<li><Link to="/" activeStyle={{ color: 'red' }}>Navigate to home</Link></li>
                 <li style = {margin}>
 					<button onClick={this.setRepos}>
@@ -52,9 +53,13 @@ class Repos extends Component {
 							Reset Repos
 					</button>
 				</li>}
-				<offline>
+				<Offline>
+					<p>This image works offline
+						<li>Want to test -</li>
+						<li>Go offline and open in incognito mode </li>
+						<li>It wont work(display), but in normal mode it will work while being offline</li> </p>
 					<Image src = "https://brightonsc.vic.edu.au/images/Offline.png"/>
-				</offline>
+				</Offline>
     			</div>
 			</CompLayoutBorder>
 			)

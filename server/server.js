@@ -43,7 +43,7 @@ function *handleRender(next) {
   match({ routes, location:this.request.url }, (err, redirect, renderProps) => {
       if(renderProps){
         if(this.request.url === '/repos'){
-          preloadedState = {...preloadedState,repos : {repoList:['Server Rendered 1','2','3','4']}}
+          preloadedState = {...preloadedState,repos : {repoList:['Server Rendered 1','SSR 2','SSR 3',' SSR 4']}}
         }
           const store = configureStore(preloadedState)
           const html = renderToString(

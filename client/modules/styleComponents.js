@@ -9,6 +9,7 @@ export const Title = styled.h1`
 
 export const LayoutBorder = styled.div`
         border:1px solid #f1efef;
+        box-shadow: .5px .5px 2px #f1efef
     `;
 
 export const LayoutPadding = styled.div`
@@ -16,9 +17,10 @@ export const LayoutPadding = styled.div`
     `;
 
 export const Offline = styled.div`
-        border:1px solid green;
+        border:1px solid #f1efef;
         padding: 20px;
-        color: red;
+        color: grey;
+        box-shadow: 2px 2px 1px #f1efef;
 `
 export const Image = styled.img`
         width:158px;
