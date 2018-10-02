@@ -13,6 +13,7 @@ Basic minimalist boilerplate which includes react,react-router,redux,webpack and
 - [x] [React](http://facebook.github.io/react/) 
  - React is UI framework.
 - [x] [React Router v4](https://github.com/reactjs/react-router)
+ - This library is used for routing the application.
 - [x] [Webpack v2](https://webpack.github.io)
 
 ### Extras
