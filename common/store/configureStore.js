@@ -6,7 +6,9 @@ const configureStore = (preloadedState) => {
   const store = createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk)
+    applyMiddleware(thunk),
+    "dfsfsfdxczxfsd",
+    'sdf'
   )
 
   if (module.hot) {
