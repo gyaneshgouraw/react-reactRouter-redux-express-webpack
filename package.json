@@ -41,7 +41,7 @@
     "serve-static": "^1.10.0",
     "styled-components": "^1.4.4",
     "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^3.1.11"
   },
   "devDependencies": {
     "babel-core": "^6.3.15",
